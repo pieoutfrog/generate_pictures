@@ -1,0 +1,13 @@
+<form method="POST">
+    {% csrf_token %}
+    <select name="template_id" id="template_select">
+        {% for template in templates %}
+            <option value="{{ template.id }}">{{ template.title }} ({{ template.sport }})</option>
+        {% endfor %}
+    </select>
+    <div>
+        <input type="text" name="full_name" placeholder="Имя и Фамилия" required>
+        <textarea name="achievement_text" placeholder="Текст достижения" required></textarea>
+    </div>
+    <button type="submit">Скачать ачивку</button>
+</form>
